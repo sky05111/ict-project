@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Sad Boy — Lost Signal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    color: #e0e0e0;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    cursor: pointer;
+}
+
+/* NOISE */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url("https://i.imgur.com/8fK4h6Y.png");
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* RAIN */
+.rain {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        transparent,
+        transparent 2px,
+        rgba(255,255,255,0.03) 3px
+    );
+    animation: rain 0.3s linear infinite;
+    z-index: 1;
+}
+
+@keyframes rain {
+    from { background-position: 0 0; }
+    to { background-position: 0 100px; }
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 40px;
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.glitch {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 48px;
+    color: #fff;
+    position: relative;
+    letter-spacing: 4px;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    opacity: 0.8;
+}
+
+.glitch::before {
+    color: #ff004c;
+    animation: glitch 2s infinite;
+}
+
+.glitch::after {
+    color: #5f5fff;
+    animation: glitch 1.5s infinite reverse;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(2px, -2px); }
+    60% { transform: translate(-1px, 1px); }
+    80% { transform: translate(1px, -1px); }
+    100% { transform: translate(0); }
+}
+
+.quote {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #8a8a8a;
+    font-style: italic;
+}
+
+/* FOTO */
+.profile-img {
+    margin-top: 45px;
+}
+
+.profile-img img {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: grayscale(80%) contrast(120%);
+    box-shadow: 0 0 40px rgba(120,0,255,0.4);
+}
+
+/* SECTION */
+section {
+    margin-bottom: 70px;
+    border-left: 2px solid rgba(120,0,255,0.4);
+    padding-left: 25px;
+}
+
+section h2 {
+    font-family: 'Share Tech Mono', monospace;
+    color: #b89cff;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+p, li {
+    color: #b0b0b0;
+    margin-bottom: 12px;
+}
+
+/* SKILLS */
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+    gap: 20px;
+}
+
+.skill {
+    padding: 18px;
+    text-align: center;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(120,0,255,0.3);
+    transition: 0.4s;
+}
+
+.skill:hover {
+    background: rgba(120,0,255,0.25);
+}
+
+/* SAD QUOTE POPUP */
+.sad-quote {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 22px;
+    font-style: italic;
+    color: #e6dcff;
+    text-align: center;
+    opacity: 0;
+    animation: fadeQuote 3.5s ease forwards;
+    z-index: 1000;
+    text-shadow: 0 0 15px rgba(120,0,255,0.6);
+    pointer-events: none;
+}
+
+@keyframes fadeQuote {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -45%);
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -55%);
+    }
+}
+
+footer {
+    text-align: center;
+    margin-top: 120px;
+    font-size: 13px;
+    color: #5a5a5a;
+    font-style: italic;
+}
+</style>
+</head>
+<body>
+
+<div class="rain"></div>
+
+<div class="container">
+    <div class="header">
+        <div class="glitch" data-text="NAMA KAMU">NAMA KAMU</div>
+        <div class="quote">"aku baik-baik saja, hanya sering hancur"</div>
+
+        <div class="profile-img">
+            <img src="https://i.pinimg.com/564x/8f/7c/7b/8f7c7b6c2c9b7d6b7a1f6d3f8fdbb4e4.jpg">
+        </div>
+    </div>
+
+    <section>
+        <h2>BIODATA</h2>
+        <p>Status: online tapi kosong</p>
+    </section>
+
+    <section>
+        <h2>SKILLS</h2>
+        <div class="skills">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">Overthinking</div>
+            <div class="skill">Insomnia</div>
+        </div>
+    </section>
+
+    <footer>
+        klik layar kalau kamu masih merasa
+    </footer>
+</div>
+
+<script>
+const sadQuotes = [
+    "aku tidak sedih, hanya sering lelah",
+    "yang pergi tidak pernah benar-benar pamit",
+    "aku diam karena sudah terlalu banyak menjelaskan",
+    "tidak semua luka berdarah",
+    "aku tersenyum agar tidak ditanya",
+    "chat terakhir selalu yang paling berat",
+    "aku masih di sini, tapi rasanya tidak ada",
+    "beberapa orang hanya singgah, bukan tinggal"
+];
+
+document.addEventListener("click", () => {
+    const quote = document.createElement("div");
+    quote.className = "sad-quote";
+    quote.innerText = sadQuotes[Math.floor(Math.random() * sadQuotes.length)];
+
+    document.body.appendChild(quote);
+
+    setTimeout(() => {
+        quote.remove();
+    }, 3500);
+});
+</script>
+
+</body>
+</html>
+

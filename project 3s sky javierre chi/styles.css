@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+/* login card */
+.login-box {
+    width: 360px;
+    padding: 45px 40px;
+    background: #0b0b0b;
+    border-radius: 12px;
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,0.05),
+        0 20px 60px rgba(0,0,0,0.9);
+}
+
+/* title */
+.login-box h1 {
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 0.85em;
+    color: #777;
+    margin-bottom: 35px;
+    font-style: italic;
+}
+
+/* inputs */
+.input-group {
+    position: relative;
+    margin-bottom: 28px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #333;
+    color: #eee;
+    font-size: 15px;
+    outline: none;
+}
+
+.input-group label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    font-size: 13px;
+    color: #666;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label {
+    top: -12px;
+    font-size: 11px;
+    color: #999;
+}
+
+/* button */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #111;
+    border: 1px solid #222;
+    color: #ccc;
+    font-size: 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+/* footer */
+.footer-text {
+    margin-top: 22px;
+    text-align: center;
+    font-size: 0.8em;
+    color: #555;
+}
+
+.footer-text a {
+    color: #777;
+    text-decoration: none;
+}
+
+.footer-text a:hover {
+    color: #aaa;
+}
